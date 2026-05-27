@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scitrack_application/routes/app_routes.dart';
 
 import '../widgets/home_card.dart';
 
@@ -56,7 +57,7 @@ class HomePage extends StatelessWidget {
 
                       Navigator.pushNamed(
                         context, 
-                        '/experiment-register'
+                        AppRoutes.experimentRegister
                       );
                     },
                   ),
@@ -69,7 +70,11 @@ class HomePage extends StatelessWidget {
                     color: Colors.green,
 
                     onTap: () {
-                      // Navegar
+                      
+                      Navigator.pushNamed(
+                        context, 
+                        AppRoutes.experimentLister
+                      );
                     },
                   ),
 

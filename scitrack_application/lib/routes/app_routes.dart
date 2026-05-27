@@ -4,4 +4,6 @@ class AppRoutes {
   static const home = '/home';
   static const perfil = '/perfil';
   static const experimentRegister = '/experiment-register';
+  static const experimentLister = '/experiment-list';
+  static const experimentEdit = 'experiment-edit';
 }
