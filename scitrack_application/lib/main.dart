@@ -3,7 +3,7 @@ import 'package:scitrack_application/pages/experiment_register_page.dart';
 import 'package:scitrack_application/pages/experiments_list_page.dart';
 import 'package:scitrack_application/pages/home_page.dart';
 import 'package:scitrack_application/pages/login_page.dart';
-import 'package:scitrack_application/pages/perfil_page.dart';
+import 'package:scitrack_application/pages/profile_page.dart';
 import 'package:scitrack_application/pages/register_page.dart';
 import 'package:scitrack_application/routes/app_routes.dart';
 
@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
         AppRoutes.login: (context) => const LoginPage(),
         AppRoutes.register: (context) => const RegisterPage(),
         AppRoutes.home: (context) => const HomePage(),
-        AppRoutes.perfil: (context) => const PerfilPage(),
         AppRoutes.experimentRegister: (context) => const ExperimentRegisterPage(),
         AppRoutes.experimentLister: (context) => const ExperimentsListPage(),
+        AppRoutes.profile: (context) => const ProfilePage(),
       },
     );
   }
