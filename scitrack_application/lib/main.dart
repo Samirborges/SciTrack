@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scitrack_application/pages/experiment_register_page.dart';
 import 'package:scitrack_application/pages/home_page.dart';
 import 'package:scitrack_application/pages/login_page.dart';
 import 'package:scitrack_application/pages/perfil_page.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.register: (context) => const RegisterPage(),
         AppRoutes.home: (context) => const HomePage(),
         AppRoutes.perfil: (context) => const PerfilPage(),
+        AppRoutes.experimentRegister: (context) => const ExperimentRegisterPage(),
       },
     );
   }
