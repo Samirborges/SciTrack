@@ -3,16 +3,12 @@ import 'package:flutter/material.dart';
 import '../widgets/home_card.dart';
 
 class HomePage extends StatelessWidget {
-
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
       appBar: AppBar(
-
         title: const Text('SciTrack'),
 
         centerTitle: true,
@@ -23,47 +19,33 @@ class HomePage extends StatelessWidget {
       ),
 
       body: Padding(
-
         padding: const EdgeInsets.all(16),
 
         child: Column(
-
-          crossAxisAlignment:
-              CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
 
           children: [
-
             const Text(
-
               'Painel do Pesquisador',
 
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
 
             const SizedBox(height: 8),
 
-            const Text(
-              'Gerencie seus experimentos científicos',
-            ),
+            const Text('Gerencie seus experimentos científicos'),
 
             const SizedBox(height: 30),
 
             Expanded(
-
               child: GridView.count(
-
                 crossAxisCount: 2,
 
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
 
                 children: [
-
                   HomeCard(
-
                     title: 'Cadastrar\nExperimento',
 
                     icon: Icons.add_circle,
@@ -72,12 +54,14 @@ class HomePage extends StatelessWidget {
 
                     onTap: () {
 
-                      // Navegar
+                      Navigator.pushNamed(
+                        context, 
+                        '/experiment-register'
+                      );
                     },
                   ),
 
                   HomeCard(
-
                     title: 'Exibir\nExperimentos',
 
                     icon: Icons.list_alt,
@@ -85,13 +69,11 @@ class HomePage extends StatelessWidget {
                     color: Colors.green,
 
                     onTap: () {
-
                       // Navegar
                     },
                   ),
 
                   HomeCard(
-
                     title: 'Editar\nExperimentos',
 
                     icon: Icons.edit,
@@ -99,13 +81,11 @@ class HomePage extends StatelessWidget {
                     color: Colors.orange,
 
                     onTap: () {
-
                       // Navegar
                     },
                   ),
 
                   HomeCard(
-
                     title: 'Excluir\nExperimentos',
 
                     icon: Icons.delete,
@@ -113,13 +93,11 @@ class HomePage extends StatelessWidget {
                     color: Colors.red,
 
                     onTap: () {
-
                       // Navegar
                     },
                   ),
 
                   HomeCard(
-
                     title: 'Visualizar\nPerfil',
 
                     icon: Icons.person,
@@ -127,13 +105,11 @@ class HomePage extends StatelessWidget {
                     color: Colors.purple,
 
                     onTap: () {
-
                       // Navegar
                     },
                   ),
 
                   HomeCard(
-
                     title: 'Sair',
 
                     icon: Icons.logout,
@@ -141,11 +117,7 @@ class HomePage extends StatelessWidget {
                     color: Colors.black87,
 
                     onTap: () {
-
-                      Navigator.pushReplacementNamed(
-                        context,
-                        '/login',
-                      );
+                      Navigator.pushReplacementNamed(context, '/login');
                     },
                   ),
                 ],
