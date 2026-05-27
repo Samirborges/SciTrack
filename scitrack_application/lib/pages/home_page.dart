@@ -86,7 +86,11 @@ class HomePage extends StatelessWidget {
                     color: Colors.purple,
 
                     onTap: () {
-                      // Navegar
+                      
+                      Navigator.pushNamed(
+                        context, 
+                        AppRoutes.profile                        
+                      );
                     },
                   ),
 
