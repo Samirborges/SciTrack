@@ -79,30 +79,6 @@ class HomePage extends StatelessWidget {
                   ),
 
                   HomeCard(
-                    title: 'Editar\nExperimentos',
-
-                    icon: Icons.edit,
-
-                    color: Colors.orange,
-
-                    onTap: () {
-                      // Navegar
-                    },
-                  ),
-
-                  HomeCard(
-                    title: 'Excluir\nExperimentos',
-
-                    icon: Icons.delete,
-
-                    color: Colors.red,
-
-                    onTap: () {
-                      // Navegar
-                    },
-                  ),
-
-                  HomeCard(
                     title: 'Visualizar\nPerfil',
 
                     icon: Icons.person,
