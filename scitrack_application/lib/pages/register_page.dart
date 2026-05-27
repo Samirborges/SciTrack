@@ -10,84 +10,61 @@ class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
   @override
-  State<RegisterPage> createState() =>
-      _RegisterPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _RegisterPageState
-    extends State<RegisterPage> {
+class _RegisterPageState extends State<RegisterPage> {
+  final _formKey = GlobalKey<FormState>();
 
-  final _formKey =
-      GlobalKey<FormState>();
+  final nameController = TextEditingController();
 
-  final nameController =
-      TextEditingController();
+  final institutionController = TextEditingController();
 
-  final institutionController =
-      TextEditingController();
+  final areaController = TextEditingController();
 
-  final areaController =
-      TextEditingController();
+  final emailController = TextEditingController();
 
-  final emailController =
-      TextEditingController();
-
-  final passwordController =
-      TextEditingController();
+  final passwordController = TextEditingController();
 
   Future<void> register() async {
-
-    if (!_formKey.currentState!
-        .validate()) {
+    if (!_formKey.currentState!.validate()) {
       return;
     }
 
     await AuthService.registerUser(
+      name: nameController.text,
+
+      institution: institutionController.text,
+
+      researchArea: areaController.text,
 
       email: emailController.text,
       password: passwordController.text,
     );
 
-    if (!mounted) return; 
+    if (!mounted) return;
 
-    ScaffoldMessenger.of(context)
-        .showSnackBar(
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Cadastro realizado')));
 
-      const SnackBar(
-        content: Text(
-          'Cadastro realizado',
-        ),
-      ),
-    );
-
-    Navigator.pushReplacementNamed(
-        context, 
-        '/home'
-    );
+    Navigator.pushReplacementNamed(context, '/home');
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
       appBar: AppBar(),
 
       body: SafeArea(
-
         child: SingleChildScrollView(
-
-          padding:
-              const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
 
           child: Form(
-
             key: _formKey,
 
             child: Column(
-
               children: [
-
                 const AuthHeader(),
 
                 const SizedBox(height: 30),
@@ -95,8 +72,7 @@ class _RegisterPageState
                 CustomTextField(
                   label: 'Nome completo',
                   icon: Icons.person,
-                  controller:
-                      nameController,
+                  controller: nameController,
                 ),
 
                 const SizedBox(height: 20),
@@ -104,8 +80,7 @@ class _RegisterPageState
                 CustomTextField(
                   label: 'Instituição',
                   icon: Icons.school,
-                  controller:
-                      institutionController,
+                  controller: institutionController,
                 ),
 
                 const SizedBox(height: 20),
@@ -113,8 +88,7 @@ class _RegisterPageState
                 CustomTextField(
                   label: 'Área de pesquisa',
                   icon: Icons.science,
-                  controller:
-                      areaController,
+                  controller: areaController,
                 ),
 
                 const SizedBox(height: 20),
@@ -122,8 +96,7 @@ class _RegisterPageState
                 CustomTextField(
                   label: 'E-mail',
                   icon: Icons.email,
-                  controller:
-                      emailController,
+                  controller: emailController,
                 ),
 
                 const SizedBox(height: 20),
@@ -132,16 +105,12 @@ class _RegisterPageState
                   label: 'Senha',
                   icon: Icons.lock,
                   obscureText: true,
-                  controller:
-                      passwordController,
+                  controller: passwordController,
                 ),
 
                 const SizedBox(height: 30),
 
-                CustomButton(
-                  text: 'Cadastrar',
-                  onPressed: register,
-                ),
+                CustomButton(text: 'Cadastrar', onPressed: register),
               ],
             ),
           ),
