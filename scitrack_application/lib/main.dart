@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:scitrack_application/pages/experiment_edit_page.dart';
 import 'package:scitrack_application/pages/experiment_register_page.dart';
 import 'package:scitrack_application/pages/experiments_list_page.dart';
 import 'package:scitrack_application/pages/home_page.dart';
