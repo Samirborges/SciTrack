@@ -60,7 +60,10 @@ class _RegisterPageState
       ),
     );
 
-    Navigator.pop(context);
+    Navigator.pushReplacementNamed(
+        context, 
+        '/home'
+    );
   }
 
   @override
